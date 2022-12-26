@@ -4,7 +4,7 @@ pipeline {
         maven 'maven_3_8_6'
     }
     stages{
-        stage('Build Maven'){
+        stage('Checkout'){
             steps{
 		checkout([$class: 'GitSCM', branches: [[name: '*/argocd']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rsystems-github/argocd.git']]])
                 ///sh 'mvn clean install'
