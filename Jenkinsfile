@@ -13,7 +13,6 @@ pipeline {
             steps {
                 sh 'sed -i "s/image: nginx:$OLD_TAG/image: nginx:$NEW_TAG/g"  nginx/nginx-deploy.yaml'
 		sh 'sed -i "s/replicas: $OLD_REPLICAS/replicas: $NEW_REPLICAS/g"  nginx/nginx-deploy.yaml'
-                }
             }
         }
     }
