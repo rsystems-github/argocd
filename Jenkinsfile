@@ -16,7 +16,7 @@ pipeline {
         stage('Update Replicas'){
             steps{
                 script{
-                    sh 'sed -i 's/replicas: 6/replicas: 12/g'  nginx/deploy.yaml'
+                    sh 'sed -i 's/replicas: 6/replicas: 12/g'  nginx/nginx-deploy.yaml'
 		    ///sh 'pwd'
                     ///sh 'docker build -t docker9447/helloworld:v1 . '
                 }
