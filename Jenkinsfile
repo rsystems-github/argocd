@@ -13,17 +13,15 @@ pipeline {
                 sh 'ls nginx'
             }
         }
-        ///stage('Build Docker Image'){
-            ///steps{
-                ///script{
-                    ///sh 'docker build -t docker9447/helloworld:v1 . '
+        stage('Update Replicas'){
+            steps{
+                script{
+                    sh 'sed -i 's/replicas: 6/replicas: 12/g'  nginx/deploy.yaml'
 		    ///sh 'pwd'
-		    ///sh 'ls'
-                    ///sh 'ls /home/jenkins/agent/workspace/devops-cicd/webapp/target/webapp.war'
                     ///sh 'docker build -t docker9447/helloworld:v1 . '
-                ///}
-            ///}
-        ///}
+                }
+            }
+        }
         ///stage('Push Docker Image to HUB'){
            /// steps{
               ///  script{
